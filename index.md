@@ -21,6 +21,10 @@ Syntax highlighted code block
 1. Numbered
 2. List
 
+sudo apt-get update
+sudo apt-get install audacity
+sudo apt-get install vlc browser-plugin-vlc
+
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
