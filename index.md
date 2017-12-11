@@ -1,3 +1,4 @@
+ ```markdown
 # Install Audacity and VLC
 sudo apt-get update
 sudo apt-get install audacity
