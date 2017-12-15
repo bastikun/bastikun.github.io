@@ -10,4 +10,130 @@
 sudo apt-get update
 sudo apt-get install audacity
 sudo apt-get install vlc browser-plugin-vlc
+
+# IIS
+*********************************************
+IIS
+net stop WAS
+net start W3SVC
+*********************************************
+
+# Delete Windows Service
+tasklist
+taskkill /pid #
+
+# RUN AS
+*********************************************
+runas /netonly /user:domain\username "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\ssms.exe"
+*********************************************
+
+# Entity Framework
+******************************************************************************************
+https://coding.abel.nu/2012/03/ef-migrations-command-reference/
+--steps in EF GXOnline
+1. enable-migrations -projectname:gxonline.data -contexttypename:gxcontext
+2. add-migration -projectname:gxonline.data initialcreate
+"The Designer Code for this migration file includes a snapshot of your current Code First model. This snapshot is used to calculate the changes to your model when you scaffold the next migration. If you make additional changes to your model that you want to include in this migration, then you can re-scaffold it by running 'Add-Migration gx' again."
+A previous migration called 'gx' was already applied to the target database. If you meant to re-scaffold 'gx', revert it by running 'Update-Database -TargetMigration 201707040736086_initialcreate', then delete '201707060409089_gx.cs' and run 'Add-Migration gx' again.
+3. update-database -projectname:gxonline.data
+******************************************************************************************
+
+# SQL Server common commands
+*********************************************
+--Describe table
+exec sp_columns MyTable
+
+--show SP content
+sp_helptext
+
+--seek SP
+select * from  sys.procedures 
+where name like '%name_of_proc%'
+
+--seek content in SP
+SELECT ROUTINE_NAME, ROUTINE_DEFINITION
+FROM INFORMATION_SCHEMA.ROUTINES 
+WHERE ROUTINE_DEFINITION LIKE '%Foo%' 
+AND ROUTINE_TYPE='PROCEDURE'
+
+--Dead Locks
+  SELECT cntr_value AS NumOfDeadLocks
+  FROM sys.dm_os_performance_counters
+  WHERE object_name = 'SQLServer:Locks'
+  AND counter_name = 'Number of Deadlocks/sec'
+  AND instance_name = '_Total'
+
+--Rename DB
+USE [master];
+GO
+ALTER DATABASE foo SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
+--EXEC sys.sp_renamedb @dbname = N'foo', @newname = N'bar';
+ALTER DATABASE foo MODIFY NAME = bar; -- preferred way
+GO
+ALTER DATABASE bar SET MULTI_USER;
+
+--Back up table
+select * into Table_New
+FROM Table_Old
+
+-- DECLARE
+declare @ID INT
+set @ID=251
+
+-- Having
+select ID, count(*) from Table
+group by ID
+having count(*) > 1
+
+-- Cursor
+USE [dbProductInfo];
+GO
+SET ANSI_NULLS ON;
+GO
+SET QUOTED_IDENTIFIER ON;
+GO
+
+IF OBJECT_ID('tempdb..#temp') IS NOT NULL
+DROP TABLE #temp
+create table #temp 
+--create test table
+(
+  SourceExperienceID int,
+  SourceSectionName NVARCHAR(100),
+  NewSectionName NVARCHAR(100)
+)
+
+--add values to test table
+INSERT INTO #temp
+SELECT 251, 'Presale', 'Presale_TEST1'
+
+INSERT INTO #temp
+SELECT 253, 'Mysection', 'Mysection_TEST1'
+
+--create cursor
+DECLARE @SourceExperienceID as INT;
+DECLARE @SourceSectionName as NVARCHAR(100);
+DECLARE @NewSectionName as NVARCHAR(100);
+ 
+DECLARE @MyCursor as CURSOR;
+ 
+SET @MyCursor = CURSOR FOR
+SELECT * FROM #temp
+ 
+OPEN @MyCursor;
+FETCH NEXT FROM @MyCursor INTO @SourceExperienceID, @SourceSectionName, @NewSectionName;
+ 
+WHILE @@FETCH_STATUS = 0
+BEGIN
+  SELECT @SourceExperienceID, @SourceSectionName, @NewSectionName;
+
+  FETCH NEXT FROM @MyCursor INTO @SourceExperienceId, @SourceSectionName, @NewSectionName;
+END
+ 
+CLOSE @MyCursor;
+DEALLOCATE @MyCursor;
+
+*********************************************
+
 ```
