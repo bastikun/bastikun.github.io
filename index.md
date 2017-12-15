@@ -22,6 +22,12 @@ sudo dpkg -i stride_amd64.deb
 sudo apt-get update
 sudo apt-get install audacity
 sudo apt-get install vlc browser-plugin-vlc
+
+# Install Stride online
+sudo sh -c 'echo "deb https://packages.atlassian.com/debian/stride-apt-client $(lsb_release -c -s) main" > /etc/apt/sources.list.d/atlassian-stride.list'
+wget -O - https://packages.atlassian.com/api/gpg/key/public | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install stride
 --------------------------------------------------------------------
 
 --------------------------------------------------------------------
