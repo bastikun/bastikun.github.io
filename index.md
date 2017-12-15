@@ -87,7 +87,7 @@ group by ID
 having count(*) > 1
 
 -- Cursor
-USE [dbProductInfo];
+USE [dbName];
 GO
 SET ANSI_NULLS ON;
 GO
