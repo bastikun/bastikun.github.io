@@ -134,6 +134,25 @@ END
 CLOSE @MyCursor;
 DEALLOCATE @MyCursor;
 
+-- CREATE TABLE
+USE [dbName];
+GO
+SET ANSI_NULLS ON;
+GO
+SET QUOTED_IDENTIFIER ON;
+GO
+IF EXISTS(SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'[dbo].[spName]') AND type IN (N'P', N'PC'))
+ DROP PROCEDURE [dbo].spName
+GO
+CREATE PROCEDURE [dbo].[spName]
+AS
+  SELECT C.Index, CD.Description
+  FROM Category AS C
+  JOIN CategoryDescription AS CD ON C.Index = CD.CategoryId
+  WHERE IsParent = 1
+  ORDER BY CD.CategoryDescription
+GO
+
 *********************************************
 
 ```
