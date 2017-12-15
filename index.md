@@ -5,6 +5,9 @@
 # LINUX
 --------------------------------------------------------------------
 # Crontab
+sudo apt-get update
+sudo apt-get install cron
+
 /var/spool/cron/crontabs
 #shutdown daily at 16:30
 30 16 * * * /sbin/poweroff # JOB_ID_1
