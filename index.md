@@ -7,7 +7,7 @@
 # Crontab
 sudo apt-get update
 sudo apt-get install cron
-
+sudo gedit /etc/crontab
 /var/spool/cron/crontabs
 #shutdown daily at 16:30
 30 16 * * * /sbin/poweroff # JOB_ID_1
@@ -31,6 +31,9 @@ sudo sh -c 'echo "deb https://packages.atlassian.com/debian/stride-apt-client $(
 wget -O - https://packages.atlassian.com/api/gpg/key/public | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install stride
+
+# Uninstall
+sudo apt-get remove complexshutdown
 --------------------------------------------------------------------
 
 --------------------------------------------------------------------
