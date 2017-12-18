@@ -163,7 +163,7 @@ END
 CLOSE @MyCursor;
 DEALLOCATE @MyCursor;
 
--- CREATE TABLE
+-- CREATE STORED PROCEDURE
 USE [dbName];
 GO
 SET ANSI_NULLS ON;
@@ -180,6 +180,27 @@ AS
   JOIN CategoryDescription AS CD ON C.Index = CD.CategoryId
   WHERE IsParent = 1
   ORDER BY CD.CategoryDescription
+GO
+
+-- CREATE TABLE
+USE [dbName]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_CATALOG='dbName' AND TABLE_NAME = 'tableName')
+BEGIN
+  CREATE TABLE [dbo].[tableName](
+  	[Index] [int] IDENTITY(1,1) NOT NULL,
+  	[DescriptionNumber] [int] NOT NULL UNIQUE,
+  	[Description] [varchar](500) NULL,
+   CONSTRAINT [pk_tableName] PRIMARY KEY CLUSTERED 
+  (
+  	[Index] ASC
+  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+  ) ON [PRIMARY]
+END
 GO
 
 *********************************************
