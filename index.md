@@ -32,6 +32,9 @@ wget -O - https://packages.atlassian.com/api/gpg/key/public | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install stride
 
+# Install Chromium
+sudo apt-get install chromium-browser
+
 # Uninstall
 sudo apt-get remove complexshutdown
 --------------------------------------------------------------------
