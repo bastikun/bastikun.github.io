@@ -206,6 +206,11 @@ BEGIN
 END
 GO
 
+-- Copy table with different columns
+INSERT INTO TableB (b1, b2, b3)
+SELECT a1, a2, a3
+FROM   TableA
+WHERE <some condition>;
 *********************************************
 
 ```
