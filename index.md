@@ -72,6 +72,7 @@ A previous migration called 'gx' was already applied to the target database. If 
 
 # Boostrap DateTime Picker
 *********************************************
+http://eonasdan.github.io/bootstrap-datetimepicker/Installing
 <div class="row">
       <div class="form-horizontal">
           <div class="form-group">
