@@ -70,6 +70,32 @@ A previous migration called 'gx' was already applied to the target database. If 
 3. update-database -projectname:gxonline.data
 ******************************************************************************************
 
+# Boostrap DateTime Picker
+*********************************************
+<div class="row">
+      <div class="form-horizontal">
+          <div class="form-group">
+              <label class="col-sm-3 control-label">
+                  Date From:
+              </label>
+              <div class="form-inline">
+                  <div class="col-sm-2">
+                      <div class="input-group date" id="divStartDate">
+                          @Html.TextBoxFor(m => m.StartDate, new { @class = "form-control", autocomplete = "off" })
+                          <span class="input-group-addon">
+                              <span class="fa fa-calendar"></span>
+                          </span>
+                      <div>
+                </div>
+            </div>
+        </div>
+  </div>
+<div>
+<script type="text/javascript" src="~/scripts/moment.min.js"></script>
+<script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.min.js"></script>
+$("#divStartDate, #StartDate").datetimepicker({ format: 'DD-MMM-YYYY' });
+*********************************************
+
 # SQL Server common commands
 *********************************************
 --Describe table
