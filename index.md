@@ -102,14 +102,19 @@ $("#divStartDate, #StartDate").datetimepicker({ format: 'DD-MMM-YYYY' });
 --Describe table
 exec sp_columns MyTable
 
---show SP content
+--Show SP content
 sp_helptext
 
---seek SP
+--Seek SP
 select * from  sys.procedures 
 where name like '%name_of_proc%'
 
---seek content in SP
+--Check where SP resided
+EXEC sp_msforeachdb 
+'if exists(select 1 from [?].sys.objects where name=''siriussp_rsReleaseHolds'')
+select ''?'' as FoundInDb from [?].sys.objects where name=''siriussp_rsReleaseHolds'''
+
+--Seek content in SP
 SELECT ROUTINE_NAME, ROUTINE_DEFINITION
 FROM INFORMATION_SCHEMA.ROUTINES 
 WHERE ROUTINE_DEFINITION LIKE '%Foo%' 
