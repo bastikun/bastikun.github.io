@@ -2,7 +2,7 @@
 
 ```markdown
 --------------------------------------------------------------------
-# LINUX
+# *** LINUX ***
 --------------------------------------------------------------------
 # Crontab
 sudo apt-get update
@@ -40,7 +40,7 @@ sudo apt-get remove complexshutdown
 --------------------------------------------------------------------
 
 --------------------------------------------------------------------
-# WINDOWS
+# *** WINDOWS ***
 --------------------------------------------------------------------
 
 # IIS
@@ -59,7 +59,7 @@ taskkill /pid #
 runas /netonly /user:domain\username "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\ssms.exe"
 *********************************************
 
-# Entity Framework
+# *** Entity Framework ***
 ******************************************************************************************
 https://coding.abel.nu/2012/03/ef-migrations-command-reference/
 --steps in EF GXOnline
@@ -70,7 +70,7 @@ A previous migration called 'gx' was already applied to the target database. If 
 3. update-database -projectname:gxonline.data
 ******************************************************************************************
 
-# Boostrap DateTime Picker
+# *** Boostrap DateTime Picker ***
 *********************************************
 http://eonasdan.github.io/bootstrap-datetimepicker/Installing
 <div class="row">
@@ -97,7 +97,7 @@ http://eonasdan.github.io/bootstrap-datetimepicker/Installing
 $("#divStartDate, #StartDate").datetimepicker({ format: 'DD-MMM-YYYY' });
 *********************************************
 
-# SQL Server common commands
+# *** SQL Server common commands ***
 *********************************************
 --Describe table
 exec sp_columns MyTable
