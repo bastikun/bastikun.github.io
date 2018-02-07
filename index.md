@@ -96,7 +96,27 @@ http://eonasdan.github.io/bootstrap-datetimepicker/Installing
 <script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.min.js"></script>
 $("#divStartDate, #StartDate").datetimepicker({ format: 'DD-MMM-YYYY' });
 *********************************************
-
+# jQuery
+********************************************* 
+function loadDropDownProducts() {
+      if ('@Model.Products' !== null) {
+          var opted = [];
+          @foreach (var m in @Model.Products) {
+              @:opted.push("@m.ProductCode");
+          }
+          for (x = 0; x < opted.length; x++) {
+              if (opted[x] !== "") {
+                  $("#ProductCode_" + x + ' option:selected').text(opted[x]);
+                  $("#ProductsName_" + x).val($("#ProductCode_" + x + ' option:selected').text());
+              }
+              else {
+                  $("#ProductCode_" + x).prop('selectedIndex', 0);
+                  $("#ProductsName_" + x).val($("#ProductCode_" + x + ' option:selected').text());
+              }
+          };
+      };
+  }
+*********************************************
 # *** SQL Server common commands ***
 *********************************************
 --Describe table
