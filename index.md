@@ -134,11 +134,19 @@ EXEC sp_msforeachdb
 'if exists(select 1 from [?].sys.objects where name=''siriussp_rsReleaseHolds'')
 select ''?'' as FoundInDb from [?].sys.objects where name=''siriussp_rsReleaseHolds'''
 
+--Check All connection Session
+SELECT db_name(S.database_id) AS DatabaseName,
+        ST.text
+FROM   sys.dm_exec_connections AS C
+       JOIN sys.dm_exec_sessions AS S ON S.session_id = C.session_id
+       OUTER APPLY sys.dm_exec_sql_text(most_recent_sql_handle) AS ST
+WHERE  C.session_id >=104;
+                                       
 --Kill session ID
 DECLARE @kill varchar(8000) = '';  
 SELECT @kill = @kill + 'kill ' + CONVERT(varchar(5), session_id) + ';'  
 FROM sys.dm_exec_sessions
-WHERE database_id  = db_id('dbProductInfo')
+WHERE database_id  = db_id('dbName')
 EXEC(@kill);
                                        
 --Seek content in SP
