@@ -162,6 +162,12 @@ AND ROUTINE_TYPE='PROCEDURE'
   AND counter_name = 'Number of Deadlocks/sec'
   AND instance_name = '_Total'
 
+-- Update two tables
+UPDATE A
+SET A.NAME = B.NAME
+FROM TableNameA A
+INNER JOIN TableName B ON A.ID = B.ID
+      
 --Rename DB
 USE [master];
 GO
