@@ -185,9 +185,15 @@ ALTER DATABASE foo MODIFY NAME = bar; -- preferred way
 GO
 ALTER DATABASE bar SET MULTI_USER;
 
---Back up table
+-- Copy table
 select * into Table_New
 FROM Table_Old
+
+-- Copy table with different columns
+INSERT INTO TableB (b1, b2, b3)
+SELECT a1, a2, a3
+FROM   TableA
+WHERE <some condition>;
 
 -- DECLARE
 declare @ID INT
@@ -286,11 +292,6 @@ BEGIN
 END
 GO
 
--- Copy table with different columns
-INSERT INTO TableB (b1, b2, b3)
-SELECT a1, a2, a3
-FROM   TableA
-WHERE <some condition>;
 *********************************************
 
 ```
