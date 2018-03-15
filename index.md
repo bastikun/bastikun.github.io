@@ -175,6 +175,9 @@ SET A.NAME = B.NAME
 FROM TableNameA A
 INNER JOIN TableName B ON A.ID = B.ID
       
+--Rename Table
+exec sp_rename 'schema.old_table_name', 'new_table_name'
+
 --Rename DB
 USE [master];
 GO
