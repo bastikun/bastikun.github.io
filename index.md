@@ -53,6 +53,11 @@ net start W3SVC
 # Delete Windows Service
 tasklist
 taskkill /pid #
+# Install Windows Service
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe "C:\Source\Repos\ProjectName\bin\Debug\My.Service.exe"
+# Debug Windows Service
+1. Start the Service in services.msc
+2. Attached the service in Debug menu VS Studio
 
 # RUN AS
 *********************************************
