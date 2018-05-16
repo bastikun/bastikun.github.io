@@ -305,5 +305,8 @@ GO
 *** TOOLS ***
 https://www.voidtools.com/support/everything/
 *************
+* Copy website
+sudo apt-get install httrack
+usage: httrack <space> url
 
 ```
