@@ -69,6 +69,8 @@ runas /netonly /user:domain\username "C:\Program Files (x86)\Microsoft SQL Serve
 https://coding.abel.nu/2012/03/ef-migrations-command-reference/
 --STEPS
 1. enable-migrations -projectname:MyProject.data -contexttypename:mycontext
+ --For multiple context
+ 1.1 enable-migrations -projectname:MyProject.data -contexttypename:mycontext -MigrationsDirectory DAL\Context1
 2. add-migration -projectname:MyProject.data initialcreate
 "The Designer Code for this migration file includes a snapshot of your current Code First model. This snapshot is used to calculate the changes to your model when you scaffold the next migration. If you make additional changes to your model that you want to include in this migration, then you can re-scaffold it by running 'Add-Migration gx' again."
 A previous migration called 'gx' was already applied to the target database. If you meant to re-scaffold 'gx', revert it by running 'Update-Database -TargetMigration 201707040736086_initialcreate', then delete '201707060409089_gx.cs' and run 'Add-Migration gx' again.
