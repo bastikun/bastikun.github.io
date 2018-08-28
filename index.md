@@ -37,6 +37,14 @@ sudo apt-get install chromium-browser
 
 # Uninstall
 sudo apt-get remove complexshutdown
+
+# Skype
+sudo apt-get remove skype
+sudo apt-get purge skype
+sudo apt-get update
+wget https://go.skype.com/linux.deb
+sudo dpkg -i linux.deb
+sudo apt-get -f install
 --------------------------------------------------------------------
 
 --------------------------------------------------------------------
