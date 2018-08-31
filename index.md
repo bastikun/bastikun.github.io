@@ -309,6 +309,17 @@ BEGIN
   ) ON [PRIMARY]
 END
 GO
+ 
+-- Get the maximum column date in the other table
+SELECT T1.Id,ISNULL(T2.AMT,0.0),T2.Date
+	FROM Table1 as T1
+	left join
+	(SELECT Id,Date, AMT, FKey
+	 FROM Table2 A
+	 WHERE Date = (SELECT max(enddate) FROM Table2 B
+							WHERE A.FKey = B.FKey)
+							) T2 
+	ON T1.Id=T2.FKey
 
 *********************************************
 
