@@ -143,6 +143,7 @@ $('td[name*=tcol]') // matches those that contain 'tcol'
 *********************************************
 --Describe table
 exec sp_columns MyTable
+exec sp_fkeys MyTable
 
 --Show SP content
 sp_helptext
