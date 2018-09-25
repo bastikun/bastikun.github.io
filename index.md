@@ -318,9 +318,31 @@ SELECT T1.Id,ISNULL(T2.AMT,0.0),T2.Date
 	(SELECT Id,Date, AMT, FKey
 	 FROM Table2 A
 	 WHERE Date = (SELECT max(enddate) FROM Table2 B
-							WHERE A.FKey = B.FKey)
-							) T2 
+			WHERE A.FKey = B.FKey)
+			) T2 
 	ON T1.Id=T2.FKey
+
+**** Run all SQL files
+@ECHO OFF
+ECHO Running ALL scripts in DEVELOPMENT ENVIRONMENT
+REM SET SQLCMD "C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\SQLCMD.EXE"
+SET PATH="C:\Users\user\SQL files"
+SET SERVER="DEV-ENV"
+SET DB="DBName"
+SET LOGIN="sa"
+SET PASSWORD="saPword"
+SET OUTPUT="C:\Temp\OutputLog.txt"
+CD %PATH%
+ECHO %date% %time% > %OUTPUT%
+for %%f in (*.sql) do (
+"C:\Program Files\Microsoft SQL Server\110\Tools\Binn\SQLCMD.EXE" /S %SERVER% /d %DB% -U %LOGIN% -P %PASSWORD% -i %%~f >> %OUTPUT%
+ECHO FILE : %%~f >> %OUTPUT%
+IF ERRORLEVEL == 1 (
+ECHO THERE WAS AN ERROR - to file >> %OUTPUT%
+ECHO THERE WAS AN ERROR - on screen)
+)
+ECHO All Scripts ran successfully
+pause
 
 *********************************************
 
