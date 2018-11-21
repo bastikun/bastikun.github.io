@@ -45,6 +45,8 @@ sudo apt-get update
 wget https://go.skype.com/linux.deb
 sudo dpkg -i linux.deb
 sudo apt-get -f install
+--Run multiple account
+skype --secondary &
 
 # Open System Monitor
 gnome-system-monitor
