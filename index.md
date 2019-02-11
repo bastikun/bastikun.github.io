@@ -360,6 +360,29 @@ ECHO THERE WAS AN ERROR - on screen)
 ECHO All Scripts ran successfully
 pause
 
+**** SP and Function
+CREATE PROCEDURE IsValid_SP
+@ID INT,
+@IsValid BIT OUTPUT
+AS
+BEGIN
+SELECT @IsValid = 1
+SELECT @IsValid = [dbo].[VehicleDistanceValid](@ID)
+END
+GO
+**** FUNCTION CALL
+CREATE FUNCTION IsValid_FX (@ID int)  RETURNS bit AS 
+BEGIN 
+DECLARE @Valid bit, @ID int
+SET @Valid = 1
+IF @ID < 0
+ SET @Valid=0
+RETURN @Valid
+**** CALLING THE SP-FX ****
+Declare @Valid bit
+EXEC IsValid_SP 2, @VehicleDistanceValid output
+SELECT @Valid
+
 *********************************************
 
 *** TOOLS ***
