@@ -199,7 +199,11 @@ INNER JOIN TableName B ON A.ID = B.ID
 --Rename Table
 exec sp_rename 'schema.old_table_name', 'new_table_name'
 --Rename Column
-sp_rename 'table_name.old_column_name', 'new_column_name', 'COLUMN';
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='GXFuelCredits' AND COLUMN_NAME='ClaimDate')
+BEGIN
+   sp_rename 'table_name.old_column_name', 'new_column_name', 'COLUMN';
+END
+--Add Column
 
 --Rename DB
 USE [master];
