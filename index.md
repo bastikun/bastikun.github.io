@@ -198,6 +198,8 @@ INNER JOIN TableName B ON A.ID = B.ID
       
 --Rename Table
 exec sp_rename 'schema.old_table_name', 'new_table_name'
+--Rename Column
+sp_rename 'table_name.old_column_name', 'new_column_name', 'COLUMN';
 
 --Rename DB
 USE [master];
