@@ -47,6 +47,10 @@ sudo dpkg -i linux.deb
 sudo apt-get -f install
 --Run multiple account
 skype --secondary &
+--Update Skype
+sudo apt install gdebi-core
+wget https://repo.skype.com/latest/skypeforlinux-64.deb
+sudo gdebi skypeforlinux-64.deb
 
 # Open System Monitor
 gnome-system-monitor
