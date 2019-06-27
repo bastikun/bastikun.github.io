@@ -55,6 +55,11 @@ sudo gdebi skypeforlinux-64.deb
 # Open System Monitor
 gnome-system-monitor
 
+--Maintenance and Tools
+sudo apt-get install preload
+sudo apt-get clean
+sudo apt-get autoremove ->remove any unused packages and dependencies
+
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 # *** WINDOWS ***
