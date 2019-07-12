@@ -399,7 +399,50 @@ EXEC IsValid_SP 2, @VehicleDistanceValid output
 SELECT @Valid
 
 *********************************************
-
+.NET
+*********************************************
+**** OAuth2 ****
+var body = $"client_id={clientId}&grant_type={grantType}&client_secret={clientSecret}&scope={scope}";
+var apiBasePath = System.Configuration.ConfigurationManager.AppSettings["APIBasePath"];
+var apiRequest = new APIRequest
+{
+Data = body,
+Method = HttpMethod.POST.ToString(),
+URI = $"{apiBasePath}/Authorisation/Connect/Token"
+};
+var apiAccess = new APIAccess();
+var response = apiAccess.GetOAuth2ClientToken(apiRequest);
+return response.AccessToken;	  
+------------------------------------------------------------------------------------------------------
+var uri = new Uri(requestParameters.URI);
+HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+request.Method = requestParameters.Method;
+request.ContentType = "application/x-www-form-urlencoded";
+if (requestParameters.Method != "GET")
+{
+    using (var requestWriter = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII))
+    {
+	requestWriter.Write(requestParameters.Data);
+    }
+}
+try
+{
+    var response = request.GetResponse() as HttpWebResponse;
+    using (Stream responseStream = response.GetResponseStream())
+    {
+	using (var reader = new StreamReader(responseStream, System.Text.Encoding.UTF8))
+	{
+	    var json = reader.ReadToEnd();
+	    var oAuth2Token = new OAuth2Token();
+	    oAuth2Token = JsonConvert.DeserializeObject<OAuth2Token>(json);
+	    apiResponse.AccessToken = oAuth2Token.access_token;
+	}
+    }
+    return apiResponse;
+}
+	  
+*********************************************
+	  
 *** TOOLS ***
 AOMEI
 https://www.voidtools.com/support/everything/
