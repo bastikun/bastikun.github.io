@@ -124,6 +124,68 @@ http://eonasdan.github.io/bootstrap-datetimepicker/Installing
 <script type="text/javascript" src="~/scripts/moment.min.js"></script>
 <script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.min.js"></script>
 $("#divStartDate, #StartDate").datetimepicker({ format: 'DD-MMM-YYYY' });
+******************************************************************************************
+	
+# *** Boostrap Accordion ***
+*********************************************
+<div class="wrapper center-block">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+@{int headingId = 0; }
+@foreach (var user in Model)
+{
+headingId += 1;
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="heading@(headingId)">
+    <h4 class="panel-title">
+	<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse@(headingId)" aria-expanded="false" aria-controls="collapse@(headingId)">
+	    <span style="margin-left:20px" ;font-weight: bold;">Title @user.Group</span>
+	</a>
+    </h4>
+</div>
+<div id="collapse@(headingId)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading@(headingId)">
+    <div class="panel-body">
+	//// your data here
+    </div>
+</div>
+</div>
+}
+</div>
+</div>
+*** CSS ***
+.panel-title > a, .panel-title > a:active {
+    display: block;
+    /*padding: 15px;*/
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    text-decoration: none;
+}
+
+.panel-heading a.accordion:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: left;
+    transition: all 0.5s;
+    color: #007CE9;
+}
+
+.panel-heading.active a:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+*** JS ***
+$('.panel-collapse').on('show.bs.collapse', function () {
+ $(this).siblings('.panel-heading').addClass('active');
+});
+
+$('.panel-collapse').on('hide.bs.collapse', function () {
+$(this).siblings('.panel-heading').removeClass('active');
+});
+
 *********************************************
 # jQuery
 ********************************************* 
