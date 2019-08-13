@@ -42,7 +42,7 @@ sudo apt-get remove complexshutdown
 sudo apt-get remove skype
 sudo apt-get purge skype
 sudo apt-get update
-wget https://go.skype.com/linux.deb
+wget https://go.skype.com/skypeforlinux-64.deb
 sudo dpkg -i linux.deb
 sudo apt-get -f install
 --Run multiple account
