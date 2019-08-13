@@ -43,7 +43,7 @@ sudo apt-get remove skype
 sudo apt-get purge skype
 sudo apt-get update
 wget https://go.skype.com/skypeforlinux-64.deb
-sudo dpkg -i linux.deb
+sudo dpkg -i skypeforlinux-64.deb
 sudo apt-get -f install
 --Run multiple account
 skype --secondary &
