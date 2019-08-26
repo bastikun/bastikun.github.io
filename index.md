@@ -219,6 +219,11 @@ $('td[name*=tcol]') // matches those that contain 'tcol'
 *********************************************
 # *** SQL Server common commands ***
 *********************************************
+--SQL Server 2016 13.x
+DROP TABLE [IF EXISTS] [database_name.][schema_name.]table_name;
+DROP TABLE IF EXISTS dbo.TableName
+--SQL Server 2016 13.x
+							       
 --Describe table
 exec sp_columns MyTable
 exec sp_fkeys MyTable
