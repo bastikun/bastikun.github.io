@@ -54,10 +54,13 @@ sudo apt install gdebi-core
 wget https://repo.skype.com/latest/skypeforlinux-64.deb
 sudo gdebi skypeforlinux-64.deb
 
+# Install Sublime
+https://askubuntu.com/questions/828226/how-to-update-sublime-text-3-in-ubuntu-16-04
+
 # Open System Monitor
 gnome-system-monitor
 
---Maintenance and Tools
+# Maintenance and Tools
 sudo apt-get install preload
 sudo apt-get clean
 sudo apt-get autoremove ->remove any unused packages and dependencies
