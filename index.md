@@ -38,6 +38,12 @@ sudo apt-get install chromium-browser
 # Uninstall
 sudo apt-get remove complexshutdown
 
+# Install Ubuntu Dark Theme
+sudo -s
+apt install -y gnome-tweaks
+apt-get install gnome-tweak-tool
+gnome-tweaks
+
 # Skype
 sudo apt-get remove skype
 sudo apt-get purge skype
