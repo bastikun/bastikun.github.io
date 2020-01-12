@@ -63,6 +63,14 @@ sudo gdebi skypeforlinux-64.deb
 # Install Sublime
 https://askubuntu.com/questions/828226/how-to-update-sublime-text-3-in-ubuntu-16-04
 
+#Install Remmina RDP
+-close
+sudo killall remmina
+-install
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret
+
 # Open System Monitor
 gnome-system-monitor
 
