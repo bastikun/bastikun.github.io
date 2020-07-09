@@ -487,6 +487,8 @@ SELECT @Valid
 *********************************************
 .NET
 *********************************************
+Date Parse: DateTime.ParseExact(booking.BookingDate, "d/M/yyyy h:m:s tt", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
+
 **** OAuth2 ****
 var body = $"client_id={clientId}&grant_type={grantType}&client_secret={clientSecret}&scope={scope}";
 var apiBasePath = System.Configuration.ConfigurationManager.AppSettings["APIBasePath"];
