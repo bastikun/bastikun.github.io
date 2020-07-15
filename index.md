@@ -12,6 +12,12 @@ sudo gedit /etc/crontab
 #shutdown daily at 16:30
 30 16 * * * /sbin/poweroff # JOB_ID_1 or 30 16 * * * root poweroff
 
+#Google Chrome Freeze randomly
+*Type "chrome://settings" in the URL bar, and then click "Advanced"
+*Untick "use hardware acceleration when available"
+*Go to "chrome://flags"
+*Disable "GPU Rasterization"
+
 # Install TAR.GZ file
 cd Downloads/
 tar zxvf anyconnect-predeploy-linux-64-4.3.05017-k9.tar.gz
