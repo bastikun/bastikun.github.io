@@ -67,6 +67,7 @@ wget https://repo.skype.com/latest/skypeforlinux-64.deb
 sudo gdebi skypeforlinux-64.deb
 
 #MS Teams
+https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
 sudo dpkg -i teams_1.3.00.5153_amd64.deb
 --Uninstall
@@ -162,7 +163,7 @@ $("#divStartDate, #StartDate").datetimepicker({ format: 'DD-MMM-YYYY' });
 <div class="wrapper center-block">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 @{int headingId = 0; }
-@foreach (var user in Model)
+@foreach (var user in Model)https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/
 {
 headingId += 1;
 <div class="panel panel-default">
