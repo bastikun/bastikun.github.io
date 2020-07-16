@@ -66,6 +66,12 @@ sudo apt install gdebi-core
 wget https://repo.skype.com/latest/skypeforlinux-64.deb
 sudo gdebi skypeforlinux-64.deb
 
+#MS Teams
+wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
+sudo dpkg -i teams_1.3.00.5153_amd64.deb
+--Uninstall
+dpkg -r teams
+
 # Install Sublime
 https://askubuntu.com/questions/828226/how-to-update-sublime-text-3-in-ubuntu-16-04
 
