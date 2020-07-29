@@ -543,6 +543,15 @@ try
 }
 	  
 *********************************************
+				     
+#REGEX
+--Remove numbers and dashes
+System.Text.RegularExpressions.Regex.Replace(data, @"[\d-]", string.Empty)
+--Email validation
+function validateEmail(email) {
+    var emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
+    return emailRegex.test(email);
+}
 	  
 *** TOOLS ***
 AOMEI
