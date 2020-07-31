@@ -42,7 +42,11 @@ sudo apt-get install stride
 sudo apt-get install chromium-browser
 
 # Uninstall
+--Check the apps list
+dpkg --list
+--unsintall
 sudo apt-get remove complexshutdown
+sudo apt-get --purge remove gimp
 
 # Install Ubuntu Dark Theme
 sudo -s
