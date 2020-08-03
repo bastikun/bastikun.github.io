@@ -500,6 +500,22 @@ RETURN @Valid
 Declare @Valid bit
 EXEC IsValid_SP 2, @VehicleDistanceValid output
 SELECT @Valid
+								 
+**** To speed up query
+CREATE PROCEDURE [dbo].[SPName]
+(            
+    @TenantID INT = null,
+    @DateFrom DATETIME,
+    @DateTo DATETIME
+)
+AS
+--Add these lines
+DECLARE 
+    @TenantID1 INT = @TenantID,
+    @DateFrom1 DATETIME = @DateFrom,
+    @DateTo1 DATETIME = @DateTo
+BEGIN
+END
 
 *********************************************
 .NET
