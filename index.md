@@ -581,4 +581,10 @@ https://www.voidtools.com/support/everything/
 sudo apt-get install httrack
 usage: httrack <space> url
 
+*************
+Azure
+sudo apt update
+sudo apt install strongswan
+sudo apt install strongswan-pki libstrongswan-extra-plugins network-manager-strongswan
+							   
 ```
