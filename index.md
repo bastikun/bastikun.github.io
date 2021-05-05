@@ -54,6 +54,12 @@ apt install -y gnome-tweaks
 apt-get install gnome-tweak-tool
 gnome-tweaks
 
+# Shutter - screenshot
+sudo add-apt-repository -y ppa:linuxuprising/shutter
+sudo apt install shutter
+sudo apt remove shutter
+sudo add-apt-repository --remove ppa:linuxuprising/shutter
+
 # Skype
 sudo apt-get remove skype
 sudo apt-get purge skype
