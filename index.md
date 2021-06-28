@@ -10,7 +10,9 @@ sudo apt-get install cron
 sudo gedit /etc/crontab
 /var/spool/cron/crontabs
 #shutdown daily at 16:30
-30 16 * * * /sbin/poweroff # JOB_ID_1 or 30 16 * * * root poweroff
+30 16 * * * /sbin/poweroff # JOB_ID_1 
+or 30 16 * * * root poweroff
+or 30 17 * * * root /sbin/shutdown -h now
 
 #Google Chrome Freeze randomly
 *Type "chrome://settings" in the URL bar, and then click "Advanced"
