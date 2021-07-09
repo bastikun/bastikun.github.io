@@ -412,6 +412,24 @@ END
  
 CLOSE @MyCursor;
 DEALLOCATE @MyCursor;
+							       
+-- WHILE LOOP
+USE [DBName];
+GO
+SET ANSI_NULLS ON;
+GO
+SET QUOTED_IDENTIFIER ON;
+GO
+DECLARE @counter INT = 1;
+WHILE @counter <= 15
+BEGIN
+  IF NOT EXISTS(SELECT * FROM TableName WHERE Col2=@counter)
+   BEGIN
+    INSERT INTO TableName(Col1,Col2) VALUES('1',@counter)
+   END
+   SET @counter = @counter + 1;
+END
+GO
 
 -- CREATE STORED PROCEDURE
 USE [dbName];
