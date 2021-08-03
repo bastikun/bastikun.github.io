@@ -323,7 +323,6 @@ IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='GXFuelCredi
 BEGIN
    sp_rename 'table_name.old_column_name', 'new_column_name', 'COLUMN';
 END
---Add Column
 
 --Rename DB
 USE [master];
