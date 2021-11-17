@@ -14,6 +14,9 @@ sudo gedit /etc/crontab
 or 30 16 * * * root poweroff
 or 30 17 * * * root /sbin/shutdown -h now
 
+# Remove Wired Connection
+nmcli connection delete id "Wired connection 1"
+
 #Google Chrome Freeze randomly
 *Type "chrome://settings" in the URL bar, and then click "Advanced"
 *Untick "use hardware acceleration when available"
