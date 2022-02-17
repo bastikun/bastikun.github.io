@@ -17,11 +17,14 @@ or 30 17 * * * root /sbin/shutdown -h now
 # Remove Wired Connection
 nmcli connection delete id "Wired connection 1"
 
-#Google Chrome Freeze randomly
+# Google Chrome Freeze randomly
 *Type "chrome://settings" in the URL bar, and then click "Advanced"
 *Untick "use hardware acceleration when available"
 *Go to "chrome://flags"
 *Disable "GPU Rasterization"
+
+# Shutter - screen capture
+apt-get install shutter
 
 # Install TAR.GZ file
 cd Downloads/
@@ -106,6 +109,10 @@ gnome-system-monitor
 sudo apt-get install preload
 sudo apt-get clean
 sudo apt-get autoremove ->remove any unused packages and dependencies
+
+# usb -
+sudo gedit /etc/modprobe.d/blacklist.conf
+-blacklist usb storage
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
