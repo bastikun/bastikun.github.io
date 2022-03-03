@@ -84,6 +84,10 @@ sudo apt install gdebi-core
 wget https://repo.skype.com/latest/skypeforlinux-64.deb
 sudo gdebi skypeforlinux-64.deb
 
+# TeamViewer
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+sudo apt install ./teamviewer_amd64.deb
+
 #MS Teams
 https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
