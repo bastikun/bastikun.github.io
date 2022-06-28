@@ -14,6 +14,14 @@ sudo gedit /etc/crontab
 or 30 16 * * * root poweroff
 or 30 17 * * * root /sbin/shutdown -h now
 
+# Upgrade/Update apps
+sudo apt-get purge network-manager
+sudo apt-get update
+sudo apt-get autoremove
+sudo apt-get upgrade
+sudo apt-get install network-manager
+sudo apt install ubuntu-desktop
+
 # Remove Wired Connection
 nmcli connection delete id "Wired connection 1"
 
