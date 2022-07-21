@@ -255,6 +255,9 @@ $(this).siblings('.panel-heading').removeClass('active');
 *********************************************
 # jQuery
 ********************************************* 
+# jQuery list functions
+https://oscarotero.com/jquery/
+		    
 function loadDropDownProducts() {
       if ('@Model.Products' !== null) {
           var opted = [];
