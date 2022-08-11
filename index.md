@@ -282,6 +282,14 @@ $('td[name=tcol1]') // matches exactly 'tcol1'
 $('td[name^=tcol]') // matches those that begin with 'tcol'
 $('td[name$=tcol]') // matches those that end with 'tcol'
 $('td[name*=tcol]') // matches those that contain 'tcol'
+							       
+-- Numeric and Alphabet only
+$(document).on("keypress", ".number-only", function (e) {
+        return (e.charCode != 8 && e.charCode == 0 || (e.charCode >= 48 && e.charCode <= 57));
+    });
+    $(document).on("keypress", ".letter-only", function (e) {
+        return (e.charCode != 8 && e.charCode == 0 || (e.charCode >= 65 && e.charCode <= 120));
+    });					       
                                        
 *********************************************
 # *** SQL Server common commands ***
