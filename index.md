@@ -654,4 +654,16 @@ sudo apt update
 sudo apt install strongswan
 sudo apt install strongswan-pki libstrongswan-extra-plugins network-manager-strongswan
 							   
+123apps.com
+hdtoday.cc
+Academy.hubspot.com
+zoro.to
+z-lib.org
+Alternativeto.net
+osee.in
+lookmoviess.com
+tubitv.com
+123aps.io
+Magiceraser.com
+PDF-https://filepursuit.com/ (edited)
 ```
