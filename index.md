@@ -165,6 +165,15 @@ A previous migration called 'gx' was already applied to the target database. If 
 3. update-database -projectname:MyProject.data
 ******************************************************************************************
 
+# *** Boostrap Col Grid ***
+Bootstrap 5
+col-* - 0 (xs)
+col-sm-* - 576px
+col-md-* - 768px
+col-lg-* - 992px
+col-xl-* - 1200px
+col-xxl-* - 1400px
+
 # *** Boostrap DateTime Picker ***
 *********************************************
 http://eonasdan.github.io/bootstrap-datetimepicker/Installing
