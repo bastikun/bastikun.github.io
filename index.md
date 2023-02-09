@@ -157,7 +157,8 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe "C:\Source\Repos
 
 # RUN AS
 *********************************************
-runas /netonly /user:domain\username "C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\ssms.exe"
+runas /netonly /user:domain\username "C:\Program Files (x86)\Microsoft 
+Server\130\Tools\Binn\ManagementStudio\ssms.exe"
 *********************************************
 
 # *** Entity Framework ***
@@ -403,6 +404,8 @@ IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Table' 
    ADD ColumnName BIT NOT NULL DEFAULT 0,
        ColumnName DATETIME NOT NULL DEFAULT null
 GO
+-- Drop/Remove Column			     
+ALTER TABLE TableName DROP COLUMN ColumnName
 	
 -- Copy table
 select * into Table_New
