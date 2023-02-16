@@ -261,7 +261,7 @@ headingId += 1;
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
 }
-*** JS ***
+*** Javascript ***
 $('.panel-collapse').on('show.bs.collapse', function () {
  $(this).siblings('.panel-heading').addClass('active');
 });
@@ -314,7 +314,29 @@ $(document).on("keypress", ".number-only", function (e) {
     });
     $(document).on("keypress", ".letter-only", function (e) {
         return (e.charCode != 8 && e.charCode == 0 || (e.charCode >= 65 && e.charCode <= 120));
-    });					       
+    });	
+					     
+-- Get query string in URL
+function getParameterByName(name, url = window.location.href) {
+	name = name.replace(/[\[\]]/g, '\\$&');
+	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+	    results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function getCookie(name) {
+	const value = `; ${document.cookie}`;
+	const parts = value.split(`; ${name}=`);
+	if (parts.length === 2) return parts.pop().split(';').shift();
+}
+function removeCookie(name) {
+	document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	}
+	function setCookie(name, value) {
+	document.cookie = name + '=' + value + '; Path=/;';
+}				     
                                        
 *********************************************
 # *** SQL Server common commands ***
