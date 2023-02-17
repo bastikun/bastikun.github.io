@@ -327,15 +327,15 @@ function getParameterByName(name, url = window.location.href) {
 }
 
 function getCookie(name) {
-	const value = `; ${document.cookie}`;
-	const parts = value.split(`; ${name}=`);
-	if (parts.length === 2) return parts.pop().split(';').shift();
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
 }
 function removeCookie(name) {
-	document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-	}
-	function setCookie(name, value) {
-	document.cookie = name + '=' + value + '; Path=/;';
+    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+function setCookie(name, value) {
+    document.cookie = name + '=' + value + '; Path=/;';
 }				     
                                        
 *********************************************
