@@ -686,6 +686,7 @@ function validateEmail(email) {
 [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 12)]
 [DataType(DataType.Password)]            
 [RegularExpression(@"(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s])^.{12,}$", ErrorMessage = "Valid password is combination of alphanumeric and special characters")]
+[JsonPropertyName("fldPassword")]
 public string Password { get; set; }
 	  
 *** TOOLS ***
