@@ -625,6 +625,14 @@ DECLARE
     @DateTo1 DATETIME = @DateTo
 BEGIN
 END
+								 
+*** User defined table type, list of array
+DECLARE @AgentCode char(8)
+DECLARE @Statuses [dbo].[ListOfInt] --User defined table type
+INSERT INTO @Statuses 
+VALUES (0),(1),(2),(3),(4),(5);
+SET @AgentCode = '3744'
+exec procGXAPI_GetClientBookings1 @AgentCode,@Statuses							 
 
 *********************************************
 .NET
