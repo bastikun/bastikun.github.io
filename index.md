@@ -345,7 +345,12 @@ function setCookie(name, value) {
 *********************************************
 # *** SQL Server common commands ***
 *********************************************
---SQL Server 2016 13.x
+--SQL Server
+--Hash Password with salt
+DECLARE @Salt uniqueidentifier = NEWID()
+DECLARE @PWHash varbinary(200)
+SET @PWHash = HASHBYTES('SHA2_512', @Password + CAST(@Salt as nvarchar(100)))
+
 DROP TABLE [IF EXISTS] [database_name.][schema_name.]table_name;
 DROP TABLE IF EXISTS dbo.TableName
 --SQL Server 2016 13.x
