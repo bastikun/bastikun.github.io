@@ -698,6 +698,14 @@ function validateEmail(email) {
     var emailRegex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
     return emailRegex.test(email);
 }
+function isValidLetter(value) {
+    var regex = /^[^\d]+$/; //// Doesn't allow numeric
+    /*var regex = /^[^\d]+$/;*/ //// Doesn't allow numeric
+    /*var regex = /^[a-zA-Z\-\s\&]+$/;*/ //// Allowed letters and specified special characters
+    /*var regex = /^([a-zA-Z]+\s)*[a-zA-Z]+$/;*/ //// Allowed letters and space
+    /*var regex = /^[a-zA-Z\s]{5,}$/; //// Min of 5 letters*/ //// Allowed min. of 5 letters and space
+    return regex.test(value);
+}
 
 [Required]
 [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 12)]
