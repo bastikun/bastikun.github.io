@@ -699,7 +699,7 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 function isValidLetter(value) {
-    var regex = /^[^\d]+$/; //// Doesn't allow numeric
+    var regex = /^[^\d]+$/; //// Doesn't allow ALL numeric
     /*var regex = /^[^\d]+$/;*/ //// Doesn't allow numeric
     /*var regex = /^[a-zA-Z\-\s\&]+$/;*/ //// Allowed letters and specified special characters
     /*var regex = /^([a-zA-Z]+\s)*[a-zA-Z]+$/;*/ //// Allowed letters and space
