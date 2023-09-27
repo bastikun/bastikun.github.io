@@ -707,6 +707,12 @@ try
     }
     return apiResponse;
 }
+-- SelectListItem dropdown without a model to cater Id and Value
+var itemList = model.Select(row => new
+{
+    Id = row.Code,
+    Value = row.Description
+}).ToList();
 	  
 *********************************************
 				     
