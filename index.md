@@ -306,6 +306,26 @@ function loadDropDownProducts() {
       };
   }
 
+function loadDropdown(url, ddlId) {
+    // var url = root + method;
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: "json", //to parse string into JSON object,
+        success: function (data) {
+            var items = "";
+            $.each(data, function (k, v) {
+                items += "<option value="+ v.Id +">" + v.Value + "</option>";
+            });
+            $(ddlId).html(items);
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            var error = "<option>" + textStatus + ': ' + errorThrown + "</option>";
+            $(ddlId).html(error);
+        }
+    });
+}
+
 -- Match Selector
 $('td[name=tcol1]') // matches exactly 'tcol1'
 $('td[name^=tcol]') // matches those that begin with 'tcol'
