@@ -326,8 +326,8 @@ function loadDropdown(url, ddlId) {
     });
 }
 $('#id').on('input keyup', function (e) {
-    $(this).val($(this).val().replace(/[^0-9\.\-]/g, ''));//// Numeric with spaces
-    $(this).val($(this).val().replace(/[^0-9\ ]/g, ''));//// Numeric with Decimal and Negative
+    $(this).val($(this).val().replace(/[^0-9\.\-]/g, ''));//// Numeric with Decimal and Negative
+    $(this).val($(this).val().replace(/[^0-9\ ]/g, ''));//// Numeric with spaces
 });
 
 -- Match Selector
