@@ -743,7 +743,15 @@ function isValidLetter(value) {
 [RegularExpression(@"(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s])^.{12,}$", ErrorMessage = "Valid password is combination of alphanumeric and special characters")]
 [JsonPropertyName("fldPassword")]
 public string Password { get; set; }
-	  
+
+*** Windows Shortcut ***
+Win+Shift+S - Screenshot
+Win+Alt+R - Screen Recording
+Win+G - Check Recorded
+Win+H - Voice Typing
+Win+Ctrl+Shift+B - Refresh Graphic Driver
+Win+X and Press U 2 times - Shutdown
+
 *** TOOLS ***
 AOMEI
 https://www.voidtools.com/support/everything/
