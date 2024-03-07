@@ -778,4 +778,11 @@ tubitv.com
 123aps.io
 Magiceraser.com
 PDF-https://filepursuit.com/ (edited)
+
+Burp suite - XSS testing
+https://gchq.github.io/CyberChef -Encode and decode data to use input or understand testing output better
+https://www.ssllabs.com/ssltest -A powerful tool to view any configuration issues your site may have
+https://www.screamingfrog.co.uk/seo-spider -Allow you to find all the linkss and pathways in an application
+
+
 ```
