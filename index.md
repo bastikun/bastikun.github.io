@@ -12,7 +12,7 @@ sudo gedit /etc/crontab
 #shutdown daily at 16:30
 30 16 * * * /sbin/poweroff # JOB_ID_1 
 or 30 16 * * * root poweroff
-or 30 17 * * * root /sbin/shutdown -h now
+or 30 17 * * * root /usr/sbin/shutdown -h now
 
 # Set password never expire
 sudo chage -l <username>
