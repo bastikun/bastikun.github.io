@@ -138,6 +138,12 @@ sudo apt-get autoremove ->remove any unused packages and dependencies
 sudo gedit /etc/modprobe.d/blacklist.conf
 -blacklist usb storage
 
+# Freezing Ubuntu
+Alt+F2 type xkill
+sudo apt-get clean --dry-run #clearing the apt cache
+sudo apt-get autoremove  #freeing some space/cleaning residual files
+sudo apt-get autoclean #cleaning thumbnail cache and uninstalling apps I almost never use
+
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 # *** WINDOWS ***
