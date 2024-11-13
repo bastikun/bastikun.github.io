@@ -469,8 +469,8 @@ GO
 ALTER TABLE TableName DROP COLUMN ColumnName
 	
 -- Copy table
-select * into Table_New
-FROM Table_Old
+select * into Target_table
+FROM Source_table
 
 -- Copy table with different columns
 INSERT INTO TableB (b1, b2, b3)
