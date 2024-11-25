@@ -671,7 +671,27 @@ DECLARE @Statuses [dbo].[ListOfInt] --User defined table type
 INSERT INTO @Statuses 
 VALUES (0),(1),(2),(3),(4),(5);
 SET @AgentCode = '3744'
-exec procGXAPI_GetClientBookings1 @AgentCode,@Statuses							 
+exec procGXAPI_GetClientBookings1 @AgentCode,@Statuses
+
+*** View table Employee combine
+	CREATE VIEW [dbo].[EmployeeLookup]  
+	AS   
+	SELECT CAST(stemsAccountid as varchar(20)) Id, Firstname + ' ' + Surname Name, Surname + ', ' + Firstname as StemsName  
+	FROM [User]  
+	UNION ALL   
+	SELECT id, Firstname + ' ' + Surname, Surname + ', ' + Firstname  
+	FROM Employee  
+	WHERE id NOT IN (SELECT CAST(StemsAccountId as varchar(50)) From [User])
+
+	CREATE VIEW CategoryLookup  
+	AS  
+	SELECT c.id id, c.id CategoryId, c.[Name] Category, NULL as SubCategoryId, NULL SubCategory  
+	FROM EventFormCategory c  
+	UNION ALL  
+	SELECT sc.Id, c.id CategoryId, c.[Name] Category, sc.Id as SubCategoryId, sc.[Name] SubCategory  
+	FROM EventFormCategory c  
+	JOIN EventFormSubCategory sc on sc.EventFormCategoryId = c.Id
+
 
 *********************************************
 .NET
